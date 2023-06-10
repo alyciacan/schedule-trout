@@ -1,0 +1,21 @@
+{
+  "name": "schedule-trout",
+  "version": "1.0.0",
+  "description": "Scheduling app for coaches and students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node api/server.js",
+    "server": "nodemon api/server.js"
+  },
+  "author": "Alycia Canavan",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
