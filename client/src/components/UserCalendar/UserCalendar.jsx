@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import {Calendar, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 
 const localizer = momentLocalizer(moment)
 
-const Calendar = () => {
-  const [events, setEvents] = useState([];)
+const UserCalendar = () => {
+  const [events, setEvents] = useState([]);
   return (
     <div>
       <Calendar 
@@ -17,4 +18,4 @@ const Calendar = () => {
   )
 }
 
-export default Calendar
+export default UserCalendar
