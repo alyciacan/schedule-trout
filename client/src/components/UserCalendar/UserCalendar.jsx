@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import {Calendar, momentLocalizer} from 'react-big-calendar'
-import moment from 'moment'
+import {Calendar, dayjsLocalizer} from 'react-big-calendar'
+import dayjs from 'dayjs'
 
-const localizer = momentLocalizer(moment)
+const localizer = dayjsLocalizer(dayjs)
 
 const UserCalendar = () => {
   const [events, setEvents] = useState([]);

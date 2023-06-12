@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BookAppointment from "../BookAppointment/BookAppointment";
 import AvailabilitySetter from "../AvailabilitySetter/AvailabilitySetter";
 import Calendar from "../UserCalendar/UserCalendar";
+import CoachAvailabilityView from "../CoachAvailabilityView/CoachAvailabilityView";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -19,8 +20,8 @@ const Dashboard = () => {
 
   return (
     <div>
-      {userType === "coach" ? <AvailabilitySetter /> : <BookAppointment />}
-      <Calendar />
+      {userType === "coach" ? <CoachAvailabilityView /> : <BookAppointment />}
+      {/* <Calendar /> */}
     </div>
   );
 };
