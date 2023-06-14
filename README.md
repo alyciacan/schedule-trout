@@ -19,12 +19,16 @@ npm install
 * Update the environment variables in the `.env` file
 
 5) Start the backend server:
-* cd ../api
-* npm run server
+```
+cd ../api
+npm run server
+```
 
 6) Start up the react app:
-* cd ../client
-* npm run dev
+```
+cd ../client
+npm run dev
+```
 * The app will be running in your browser at http://localhost:5173/
 
 ## Known Issues:
