@@ -22,14 +22,14 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <h2>Log In</h2>
         <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="email"
-        />
+          <input
+            id="email"
+            name="email"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="email"
+          />
         <label htmlFor="password">Password</label>
         <input 
           id="password"

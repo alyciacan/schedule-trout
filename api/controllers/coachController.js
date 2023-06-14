@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler')
 const Coach = require('../models/coachModel')
 
 //@desc Get coaches
-//@route GET /api/goals
+//@route GET /api/coaches
 //@access Private
 const getCoaches = asyncHandler(async (req, res) => {
   const coaches = await Coach.find()
@@ -12,7 +12,7 @@ const getCoaches = asyncHandler(async (req, res) => {
 })
 
 //@desc Set coaches
-//@route POST /api/goals
+//@route POST /api/coaches
 //@access Private
 const setCoach = asyncHandler(async (req, res) => {
   if(!req.body.name) {
@@ -26,7 +26,7 @@ const setCoach = asyncHandler(async (req, res) => {
 })
 
 //@desc Update coaches
-//@route PUT /api/goals/:id
+//@route PUT /api/coaches/:id
 //@access Private
 const updateCoach = asyncHandler(async (req, res) => {
   const updatedCoach = await Coach.findByIdAndUpdate(

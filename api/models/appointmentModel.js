@@ -8,6 +8,11 @@ const AppointmentSchema = mongoose.Schema({
     ref: 'Coach',
     required: true,
   },
+  studentId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
   availabilityWindowId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'AvailabilityWindow',

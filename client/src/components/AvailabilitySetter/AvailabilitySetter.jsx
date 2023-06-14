@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import dayjs from 'dayjs'
 import { createAvailableSlot } from '../../../utils/resource'
+import EventBus from '../../../utils/EventBus'
 
-const AvailabilitySetter = ({ handleFormSubmit }) => {
+const AvailabilitySetter = () => {
   const [inputStartTime, setInputStartTime] = useState('')
   const [message, setMessage] = useState('')
 
   const handleChange = (e) => {
-    console.log('change made!')
+    console.log(e.target.value)
     setInputStartTime(dayjs(e.target.value))
   }
 
@@ -20,15 +21,18 @@ const AvailabilitySetter = ({ handleFormSubmit }) => {
       coachName: localStorage.getItem("name")
     }
     const res = await createAvailableSlot(slot)
-    setMessage(res)
-    handleFormSubmit()
+    if(res.ok) {
+      EventBus.dispatch('updateAvailabilityCalendar', '')
+      setInputStartTime('')
+    }
+
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="startTime"></label>
-        <input type="datetime-local" id="startTime" onChange={handleChange}/>
+        <input type="datetime-local" id="startTime" onChange={handleChange} value={inputStartTime ? dayjs(inputStartTime).format('YYYY-MM-DDTHH:mm') : ''}/>
         <button>Add Appointment Slot</button>
       </form>
       <h2>{message}</h2>

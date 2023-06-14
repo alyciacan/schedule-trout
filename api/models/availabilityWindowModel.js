@@ -15,6 +15,11 @@ const AvailabilityWindowSchema = mongoose.Schema({
   endTime: {
     type: Date,
     required: true,
+  },
+  appointmentId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Appointment',
+    default: null
   }
 }
 )
